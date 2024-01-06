@@ -62,7 +62,7 @@ export class BanersComponent implements OnInit {
     });
 
 
-    this.apartmentService.getApartments("",null,null,null,0,0,[],[],1,100).subscribe({
+    this.apartmentService.getApartments("",null,null,null,0,0,[],[],null,[],1,100).subscribe({
       next:response=>{
         this.allApartments = response.apartments;
         this.allApartments.forEach(x=>{

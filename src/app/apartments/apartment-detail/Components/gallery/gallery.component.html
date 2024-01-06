@@ -1,54 +1,76 @@
 <ng-container *ngIf="isLoadedGalery">
-    <!--<carousel>
-        <slide *ngFor="let slide of images">
-          <img [src]="slide.path" alt="Slide" class="slide-image">
-          <div class="carousel-caption">
-      
+  <!-- <section class="gallery w-100">
+    <section class="portfolio">
+      <h3>Galerija <span class="font-weight-bold"> slika </span></h3>
+          <div class="row portfolio-items">
+
+            <ng-container *ngFor="let img of images; let i = index">
+
+              <div class="item col-lg-4 col-md-6 a-frame" data-aos="zoom-in">
+                  <div class="single-portfolio">
+                      <div class="portfolio-img">
+                          <img src="{{img.path}}" alt="{{i}}" />
+                          <div class="portfolio-view">
+                              <div class="item-wrap">
+                                  <a class="img-poppu" href="{{img.path}}" data-rel="lightcase:myCollection:slideshow">
+                                      <span class="plus"></span>
+                                  </a>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="portfolio-text">
+                          <a href="#"><h4></h4></a>
+                      </div>
+                  </div>
+              </div>
+            </ng-container>
+
+              <div class="item col-lg-4 col-sm-6 col-xs-12 landscapes last-item two">
+
+              </div>
+
           </div>
-        </slide>
-      </carousel>-->
-  <section class="gallery w-100">
-    <!-- <div class="gallery__item">
-      <input type="radio" id="img-1" checked name="gallery" class="gallery__selector"/>
-      <img class="gallery__img" src="{{thumb.path}}" alt=""/>
-      <label for="img-1" class="gallery__thumb"><img src="{{thumb.path}}" alt=""/></label>
-    </div> -->
-    <div class="row">
-      <ng-container *ngFor="let img of images; let i = index">
-        <ng-container *ngIf="i == 0; else elseBlock">
-          <div class="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
-            <div class="gallery__item">
-              <input type="radio" id="img-{{i + 2}}" checked name="gallery" class="gallery__selector"/>
-              <img class="gallery__img big-image"  src="{{img.path}}" alt="thumnail image"/>
-              <label for="img-{{i+2}}" class="gallery__thumb d-flex justify-content-center"><img src="{{img.path}}" class="small-img w-100" alt=""/></label>
+
+      </section>
+
+  </section> -->
+  <section id="" class="">
+    <div class="container" data-aos="fade-right">
+        <!-- 1 -->
+        <div class="row portfolio-items">
+            <div class="item it2  col-12 web">
+                <div class="single-portfolio">
+                    <div class="portfolio-img">
+                        <img src="{{thumb.path}}" class="w-100" alt="IMG-1726" />
+                        <div class="portfolio-view">
+                            <div class="item-wrap">
+                                <span class="img-poppu" (click)="showImage()">
+                                    <span class="plus"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </ng-container>
-        <ng-template #elseBlock>
-          <div class="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
-            <div class="gallery__item">
-              <input type="radio" id="img-{{i + 2}}"  name="gallery" class="gallery__selector"/>
-              <img class="gallery__img big-image" src="{{img.path}}" alt="thumbnail image {{i}}"/>
-              <label for="img-{{i+2}}" class="gallery__thumb d-flex justify-content-center"><img src="{{img.path}}" class="small-img w-100" alt=""/></label>
-            </div>
-          </div>
-        </ng-template>
-      </ng-container>
+        </div>
     </div>
-    <!-- <div class="gallery__item">
-      <input type="radio" id="img-2" name="gallery" class="gallery__selector"/>
-      <img class="gallery__img" src="https://picsum.photos/id/1039/600/400.jpg" alt=""/>
-      <label for="img-2" class="gallery__thumb"><img src="https://picsum.photos/id/1039/150/100.jpg" alt=""/></label>
+    <div class="fullPreview" *ngIf="showFullPreview">
+      <div class="cerrarModal" (click)="closeFullPreview()"></div>
+      <div class="wrapper">
+        <div class="blur" [style.background-image]="'url(' + selectedImage.path + ')'"></div>
+        <p class="titulo"></p>
+        <img [src]="selectedImage.path" class="w-100" alt="temporary image, fullscreen of one image in galery" (click)="navigateImages('next')">
+        <p class="desc"></p>
+      </div>
+      <div class="controles d-flex row">
+        <div class="control ret col-6 " (click)="navigateImages('prev')"><i class="fa-solid fa-circle-arrow-left"></i></div>
+        <div class="control av col-6 d-flex justify-content-end"  (click)="navigateImages('next')"><i class="fa-solid fa-circle-arrow-right"></i></div>
+      </div>
+      <i class="fa-regular fa-circle-xmark close-button" (click)="closeFullPreview()"></i>
     </div>
-    <div class="gallery__item">
-      <input type="radio" id="img-3" name="gallery" class="gallery__selector"/>
-      <img class="gallery__img" src="https://picsum.photos/id/1057/600/400.jpg" alt=""/>
-      <label for="img-3" class="gallery__thumb"><img src="https://picsum.photos/id/1057/150/100.jpg" alt=""/></label>
+    <div class="overley-gallery " (click)="closeFullPreview()" *ngIf="showFullPreview">
+
     </div>
-    <div class="gallery__item">
-      <input type="radio" id="img-4" name="gallery" class="gallery__selector"/>
-      <img class="gallery__img" src="https://picsum.photos/id/106/600/400.jpg" alt=""/>
-      <label for="img-4" class="gallery__thumb"><img src="https://picsum.photos/id/106/150/100.jpg" alt=""/></label>
-    </div> -->
-  </section>
+ 
+</section>
 </ng-container>

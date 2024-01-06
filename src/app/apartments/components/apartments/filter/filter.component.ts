@@ -5,6 +5,7 @@ import { ICity } from 'src/app/shared/interface/i-city';
 import { CategoryService } from 'src/app/shared/services/categories/category.service';
 import { CitiesService } from 'src/app/shared/services/cities/cities.service';
 import { animate, state, style, transition, trigger } from '@angular/animations';
+import { param } from 'jquery';
 
 
 @Component({
@@ -39,6 +40,7 @@ export class FilterComponent {
 
   defaultNumberPerson: number;
   numbersOfPersons: number[] = [1,2,3,4,5,6,7,8,9];
+  selectedNumberOfPerson: number;
 
   minStartDate: string;
   minEndDate: string;
@@ -51,14 +53,13 @@ export class FilterComponent {
   categories: ICategory[];
   initalSelectedCategoryIds: number[];
 
-  checkWifi:boolean;
-  checkLift:boolean;
-  checkKlima:boolean;
-  checkTv:boolean;
-  checkDjakuzi:boolean;
-  checkTerasa:boolean;
-  checkSef:boolean;
-  checkParking:boolean;
+  checkLiftId:number = 4;
+  checkKlimaId:number = 2;
+  checkTvId:number = 3;
+  checkDjakuziId:number = 11;
+  checkTerasaId:number = 100;
+  checkSefId:number = 1001;
+  checkParkingId:number = 8;
 
   constructor(private formBuilder: FormBuilder,
               private cityService: CitiesService,
@@ -145,15 +146,43 @@ export class FilterComponent {
 
   submitForm(): void {
     var params = this.filterForm.value;
+
+    var specs = new Array();
+    if(params.checkDjakuzi) specs.push(this.checkDjakuziId);
+    if(params.checkKlima) specs.push(this.checkKlimaId);
+    if(params.checkLift) specs.push(this.checkLiftId);
+    if(params.checkSef) specs.push(this.checkSefId);
+    if(params.checkTerasa) specs.push(this.checkTerasaId);
+    if(params.checkTv) specs.push(this.checkTvId);
+    params.specificationIds = specs;
+
+    if(params.checkParking)
+    {
+      params.garage = true;
+    }
+    else 
+    {
+      params.garage = false;
+    }
+
     if(!params.city) params.city = [];
     if(!params.start) params.start = null;
     if(!params.end) params.end = null;
-    // if(!params.numPerson) params.numPerson = null;
-    params.numPerson = null;
+
+    if(this.selectedNumberOfPerson == null || this.selectedNumberOfPerson ==0)
+    {
+       params.numPerson = null;
+    }
+    else{
+        params.numPerson = this.selectedNumberOfPerson;
+    }
+
     if(!params.category) params.category = [];
     if(!params.title) params.title = "";
     if(!params.minPrice) params.minPrice = 0;
     if(!params.maxPrice) params.maxPrice = 0;
+    console.log("selected number person", this.selectedNumberOfPerson);
+    console.log("person in param", params.numPerson);
     this.filterEmiter.emit(params);
   }
 

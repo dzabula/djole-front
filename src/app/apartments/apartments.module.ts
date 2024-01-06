@@ -35,6 +35,7 @@ import { PaginationComponent } from './components/apartments/pagination/paginati
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioGroup, MatRadioModule } from '@angular/material/radio';
+import { LightboxModule } from 'ngx-lightbox';
 
 @NgModule({
   declarations: [
@@ -75,8 +76,7 @@ import { MatRadioGroup, MatRadioModule } from '@angular/material/radio';
     MatDialogModule,
     MatCheckboxModule,
     MatRadioModule,
-    
-   
-  ]
+    LightboxModule 
+    ]
 })
 export class ApartmentsModule { }

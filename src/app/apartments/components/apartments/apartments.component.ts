@@ -96,12 +96,11 @@ export class ApartmentsComponent {
     if(filterData){
       this.oldFilterData = filterData;
 
-//OBRISTAI LINIJIU KODA ISPOD OVOG POSLE KAKO BI FILTRIRANJE PRIMENILO BROJI OSOBA
-      this.oldFilterData.numPerson = null;
+
 
       this.apartmentService.getApartments(this.oldFilterData.title,this.oldFilterData.numPerson,this.formatDateToYYYYMMDD(this.oldFilterData.start),
                                           this.formatDateToYYYYMMDD(this.oldFilterData.end),this.oldFilterData.minPrice,this.oldFilterData.maxPrice,
-                                          this.oldFilterData.category,this.oldFilterData.city,this.currentPage,this.pageSize).subscribe({
+                                          this.oldFilterData.category,this.oldFilterData.city,this.oldFilterData.garage, this.oldFilterData.specificationIds,this.currentPage,this.pageSize).subscribe({
           next:(response: any)=>{
             this.loading = false;
             this.HasApartment = response.numberApartments > 0;
@@ -128,7 +127,7 @@ export class ApartmentsComponent {
 
       this.apartmentService.getApartments(this.oldFilterData.title,this.oldFilterData.numPerson,this.formatDateToYYYYMMDD(this.oldFilterData.start),
                                           this.formatDateToYYYYMMDD(this.oldFilterData.end),this.oldFilterData.minPrice,this.oldFilterData.maxPrice,
-                                          this.oldFilterData.category,this.oldFilterData.city,this.currentPage,this.pageSize).subscribe({
+                                          this.oldFilterData.category,this.oldFilterData.city,this.oldFilterData.garage, this.oldFilterData.specificationIds,this.currentPage,this.pageSize).subscribe({
         next: (response:any) =>{
           this.loading = false;
           this.items = response.apartments;

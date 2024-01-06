@@ -91,4 +91,387 @@ img {
   .gallery{
     padding-top: $max-img-height/$max-img-width * 85%;
   }
+  .fullPreview{
+    width: 70% !important;
+  }
 }
+@media (max-width: 772px) {
+  .fullPreview{
+    width: 80% !important;
+  }
+}
+@media (max-width: 525px) {
+  .fullPreview{
+    width: 90% !important;
+  }
+}
+/*MOJI KOS NADOVEZIVANJE NA MONTAZNE KUCE*/
+.overley-gallery{
+  position: fixed;
+  z-index: 9998;
+  width: 100%;
+  height: 100vh;
+  background-color: #00000044;
+  top:0;
+  left: 0;
+}
+.fullPreview{
+  position: fixed;
+  z-index: 9999 !important;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+}
+.control i{
+  font-size: 30px;
+  cursor:pointer;
+  color:var(--jaka-roza)
+}
+
+.close-button{
+  position: absolute;
+  cursor: pointer;
+  right: -35px;
+  top:-15px;
+  font-size: 30px;
+  color:var(--jaka-roza)
+}
+
+
+
+/*KOD SA MONTAZNIH KUCA*/
+section.portfolio {
+  padding: 6rem 0;
+  background: #212529;
+}
+
+.portfolio .top-headings-section h2,
+.portfolio .top-headings-section h2 span {
+  color: #fff;
+}
+
+.portfolio .top-headings-section h2::after {
+  background: #fff;
+}
+
+.portfolio .item {
+  padding-bottom: 2rem;
+}
+
+.portfolio .it2 {
+  padding-bottom: 30px;
+}
+
+@media screen and (min-width: 992px) {
+  .last-item {
+    padding-bottom: 0px !important;
+  }
+}
+@media screen and (max-width: 991px) {
+  .last-item.one,
+  .last-item.two {
+    padding-bottom: 0px !important;
+  }
+}
+@media screen and (max-width: 575px) {
+  .portfolio .it2 {
+    padding-bottom: 30px;
+  }
+}
+.portfolio .filters-group {
+  margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 490px) {
+  .portfolio .filters-group ul {
+    padding-left: 0px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .last-item.two.pt {
+    padding-top: 30px;
+  }
+}
+.portfolio .filters-group ul li {
+  list-style: none;
+  display: inline-block;
+  padding: 10px 15px;
+  text-transform: capitalize;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 5px;
+  color: #fff;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.portfolio .filters-group ul li:hover {
+  background: #c18847;
+  color: #fff;
+}
+
+.portfolio .filters-group {
+  text-align: center;
+  border-radius: 5px;
+}
+
+.portfolio .filters-group .active {
+  background: #c18847;
+  color: #fff;
+}
+
+.portfolio .magnifier {
+  background: rgba(0, 0, 0, 0.7) url("../../../../../assets/images/magnifier.png") no-repeat center;
+  position: absolute;
+  top: 0;
+  left: 15px;
+  bottom: 23px;
+  right: 15px;
+  opacity: 0;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.portfolio .magnifier:hover {
+  opacity: 0.8;
+}
+
+.portfolio .port-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 1rem;
+}
+
+.portfolio-title {
+  padding: 1.5rem 1rem;
+  background: #fff;
+  -webkit-box-shadow: 0px 6px 0px 0px #f1f1f1;
+          box-shadow: 0px 6px 0px 0px #f1f1f1;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.portfolio-title h3 a {
+  font-weight: 400;
+  text-transform: capitalize;
+  color: #000;
+}
+
+.portfolio-title h3 {
+  margin-top: 0px;
+}
+
+/* HOVER 2 */
+.single-preview {
+  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.single-preview-img a {
+  display: inline-block;
+  position: relative;
+}
+
+.single-preview-img a::after {
+  color: #ffffff;
+  content: "\f196";
+  font-family: FontAwesome;
+  font-size: 4.5rem;
+  font-weight: 300;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  text-transform: capitalize;
+  top: 20%;
+  -webkit-transition: all .5s ease 0s;
+  transition: all .5s ease 0s;
+}
+
+.single-preview-img a::before {
+  background: #000000 none repeat scroll 0 0;
+  content: "";
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  width: 100%;
+}
+
+.single-preview:hover .single-preview-img a::before {
+  opacity: 0.8;
+}
+
+.single-preview:hover .single-preview-img a::after {
+  opacity: 1;
+  top: 44%;
+}
+
+/* HOVER 3 */
+.single-portfolio {
+  position: relative;
+}
+
+img {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+}
+
+.portfolio-img a {
+  display: inline-block;
+  position: relative;
+}
+
+.portfolio-view {
+  left: 0;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.single-portfolio .img-poppu::before,
+.single-portfolio .img-poppu::after {
+  background: #fff none repeat scroll 0 0;
+  bottom: 0;
+  content: "";
+  height: 20px;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  -webkit-transition: all .5s ease 0s;
+  transition: all .5s ease 0s;
+  width: 1px;
+}
+
+.single-portfolio .img-poppu:hover:before,
+.single-portfolio .img-poppu:hover:after {
+  background: #c18847;
+}
+
+.single-portfolio .img-poppu::after {
+  height: 1px;
+  width: 20px;
+}
+
+.single-portfolio .img-poppu {
+  border: 1px solid white;
+  color: white;
+  display: inline-block;
+  height: 50px;
+  opacity: 1;
+  padding: 5px 25px;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  width: 50px;
+  z-index: 99;
+}
+.item-wrap{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.single-portfolio .img-poppu:hover {
+  background: #fff;
+  color: #232323;
+}
+
+.single-portfolio > .portfolio-img::before {
+  background: rgba(0, 0, 0, 0.8) none repeat scroll 0 0;
+  bottom: 15px;
+  content: "";
+  left: 15px;
+  opacity: 0;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  -webkit-transition: all .5s ease-in-out 0s;
+  transition: all .5s ease-in-out 0s;
+}
+
+.single-portfolio .portfolio-img::before {
+  background: #000 none repeat scroll 0 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.6;
+  right: 0;
+  top: 0;
+  border-radius: 25px;
+}
+
+.single-portfolio:hover .portfolio-img::before {
+  opacity: 0.8;
+}
+
+.single-portfolio:hover .portfolio-img {
+  opacity: 1;
+}
+
+.single-portfolio:hover .img-poppu {
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+}
+
+.portfolio-text {
+  position: absolute;
+  bottom: 40px;
+  left: 20px;
+  opacity: 0;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+
+.portfolio-text a h4 {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  font-size: 18px;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.portfolio-text a h4:hover {
+  color: #fff;
+}
+
+.portfolio-title h3 {
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-text span {
+  color: #fff;
+}
+
+.single-portfolio:hover .portfolio-text {
+  opacity: 1;
+  bottom: 20px;
+}
+
+.no-gutters {
+  padding: 0px !important;
+}
+
+.mt-4 {
+  margin-top: 2rem;
+}
+
+/*KRAJ KODA SA MONTAZNIH KUCA*/

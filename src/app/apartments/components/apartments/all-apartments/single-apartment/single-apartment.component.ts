@@ -13,7 +13,6 @@ export class SingleApartmentComponent implements OnInit {
   square: string;
 
   ngOnInit(): void {
-    console.log("data",this.data);
     var specification = this.data.apartmentSpecifications;
     if(specification != null) var square = specification.filter(x=>x.specification == "Povrsina");
     if(square != null && square.length > 0) this.square = square[0].value; 

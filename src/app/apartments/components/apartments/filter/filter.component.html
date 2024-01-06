@@ -19,7 +19,7 @@
                     <div class="form-row col-12 col-lg-4">
                         <mat-form-field class="w-100">
                         <mat-label>Broji osoba:</mat-label>
-                        <mat-select placeholder="Broji osoba"  formControlName="numPerson">
+                        <mat-select placeholder="Broji osoba"  [(ngModel)]="selectedNumberOfPerson" formControlName="numPerson">
                             <mat-option *ngFor="let num of numbersOfPersons" [value]="num">{{ num }}</mat-option>
                         </mat-select>
                         </mat-form-field>
@@ -80,45 +80,40 @@
                         </mat-form-field>
                     </div>
                 </div>
-                <div class="row d-flex ">
+                <div class="row d-flex "> 
                     <div class="col-6 col-md-4 col-xl-3 col-lg-2">
-                        <mat-radio-group formControlName="checkWifi" class="row">
-                            <mat-checkbox value="wifi">WiFi</mat-checkbox>
+                        <mat-radio-group  class="row">
+                            <mat-checkbox formControlName="checkLift" value="4">Lift</mat-checkbox>
                         </mat-radio-group>
                     </div>
                     <div class="col-6 col-md-4 col-xl-3 col-lg-2">
-                        <mat-radio-group formControlName="checkLift" class="row">
-                            <mat-checkbox value="lift">Lift</mat-checkbox>
+                        <mat-radio-group class="row">
+                            <mat-checkbox formControlName="checkKlima" value="2">Klima</mat-checkbox>
                         </mat-radio-group>
                     </div>
                     <div class="col-6 col-md-4 col-xl-3 col-lg-2">
-                        <mat-radio-group formControlName="checkKlima" class="row">
-                            <mat-checkbox value="klima">Klima</mat-checkbox>
+                        <mat-radio-group  class="row">
+                            <mat-checkbox formControlName="checkTv" value="3">TV</mat-checkbox>
                         </mat-radio-group>
                     </div>
                     <div class="col-6 col-md-4 col-xl-3 col-lg-2">
-                        <mat-radio-group formControlName="checkTv" class="row">
-                            <mat-checkbox value="tv">TV</mat-checkbox>
+                        <mat-radio-group class="row">
+                            <mat-checkbox formControlName="checkDjakuzi" value="11">Djakuzi</mat-checkbox>
                         </mat-radio-group>
                     </div>
                     <div class="col-6 col-md-4 col-xl-3 col-lg-2">
-                        <mat-radio-group formControlName="checkDjakuzi" class="row">
-                            <mat-checkbox value="djakuzi">Djakuzi</mat-checkbox>
+                        <mat-radio-group class="row">
+                            <mat-checkbox  formControlName="checkTerasa"  value="20">Terasa</mat-checkbox>
                         </mat-radio-group>
                     </div>
                     <div class="col-6 col-md-4 col-xl-3 col-lg-2">
-                        <mat-radio-group formControlName="checkTerasa" class="row">
-                            <mat-checkbox value="terasa">Terasa</mat-checkbox>
+                        <mat-radio-group class="row">
+                            <mat-checkbox  formControlName="checkSef"  value="21">Sef</mat-checkbox>
                         </mat-radio-group>
                     </div>
                     <div class="col-6 col-md-4 col-xl-3 col-lg-2">
-                        <mat-radio-group formControlName="checkSef" class="row">
-                            <mat-checkbox value="sef">Sef</mat-checkbox>
-                        </mat-radio-group>
-                    </div>
-                    <div class="col-6 col-md-4 col-xl-3 col-lg-2">
-                        <mat-radio-group formControlName="checkParking" class="row">
-                            <mat-checkbox value="parking">Parking</mat-checkbox>
+                        <mat-radio-group class="row">
+                            <mat-checkbox formControlName="checkParking" value="parking">Parking</mat-checkbox>
                         </mat-radio-group>
                     </div>
 

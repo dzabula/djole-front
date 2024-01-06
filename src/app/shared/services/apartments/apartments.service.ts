@@ -17,26 +17,29 @@ export class ApartmentsService extends ApiService<IApartment> {
     
   }
 
-  getApartments(title:string,numPerson: number, start:string, end:string, minPrice :number, maxPrice:number, categoryIds: number[], cityIds: number[], pageNumber:number, pageSize:number)  :Observable<IPagination>{
+  getApartments(title:string,numPerson: any, start:string, end:string, minPrice :number, maxPrice:number, categoryIds: number[] = [], cityIds: number[], garage:boolean = false, specificationIds: number[], pageNumber:number, pageSize:number)  :Observable<IPagination>{
+    if(garage == null) garage = false;
     var params = new HttpParams()
                   .append("title",title)
                   .append("minPrice",minPrice)
                   .append("maxPrice",maxPrice)
+                  .append("garage", garage)
                   .append("pageNumber",pageNumber)
                   .append("pageSize",pageSize);
 
-
-    console.log("parametri",params)
     const cateogryParamsString = categoryIds.map(id => `CategoryIds=${id}`).join('&');
     const cityParamsString = cityIds.map(id => `CityIds=${id}`).join('&');
+    var specificationParamsString;
+    if(specificationIds) specificationParamsString = specificationIds.map(id => `ApartmentSpecificationIds=${id}`).join('&');
     var paramsString= "?"+params.toString();
     if(cateogryParamsString) paramsString += "&" + cateogryParamsString;
     if(cityParamsString) paramsString += "&" + cityParamsString;
+    if(specificationParamsString) paramsString += "&" + specificationParamsString;
     if(numPerson != null) paramsString += "&numPerson=" + numPerson;
     if(start != null) paramsString += "&start=" + start;
     if(end != null) paramsString += "&end" + end;
-
-
+    console.log("Parametri pr elsanja:", paramsString);
+    console.log("Num person je:", numPerson);
     return  this.client.get<IPagination>(this.url + paramsString )
         
   }

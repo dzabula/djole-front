@@ -65,7 +65,7 @@ export class ManagmentComponent implements OnInit {
 
     this.loading = true;
 
-    this.apartmentService.getApartments(this.apartmentKeyWord,null,null,null,0,0,catIds,[],1,1000).subscribe({
+    this.apartmentService.getApartments(this.apartmentKeyWord,null,null,null,0,0,catIds,[],null,[],1,1000).subscribe({
       next: data => {
           this.hasApartment = data.numberApartments > 0;
           this.loading = false;

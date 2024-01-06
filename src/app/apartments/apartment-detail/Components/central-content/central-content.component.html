@@ -54,9 +54,9 @@
                             <ng-container *ngIf="spec.value.toLowerCase() != 'ne' || spec.value.toLowerCase() == 'ima'; else elseBlock5">
                                  <span class="w-inherit spec-line  mb-3">
                                     <div class="apartment-details-one__list-content">                                      
-                                        <div>    
+                                        <div class="pointer">    
                                             <div *ngIf="spec.value.toLowerCase() == 'da' || spec.value.toLowerCase() == 'ima'; else elseBlock5">
-                                                <span class="hvr-float-shadow">{{spec.icon}} {{spec.specification}}: <i class="fa-solid fa-check aplipes-black"></i> </span>
+                                                <span class="hvr-float-shadow"> <span class="aplipes-black" [innerHTML]="spec.icon"></span> {{spec.specification}}: <i class="fa-solid fa-check aplipes-black"></i> </span>
                                             </div>
                                             <ng-template #elseBlock5>
                                                 <div *ngIf="spec.value.toLowerCase() == 'ne' || spec.value.toLowerCase() == 'nema'; else elseBlock6">
@@ -64,7 +64,7 @@
                                                 </div>
                                                 <ng-template #elseBlock6>
                                                     <span class="hvr-float-shadow">
-                                                        {{spec.icon}}
+                                                        <span class="aplipes-black" [innerHTML]="spec.icon"></span>
                                                         {{spec.specification}}: {{spec.value}}
                                                     </span>
                                                 </ng-template>
@@ -104,9 +104,17 @@
                                 <span class="price-span">{{currentPrice + (data.pricePerPerson * i) | MoneyFormat}} &euro;</span>
                             </div>
                         </div>
+                        <div class=" row row-price">
+                            <div class="col-lg-3 col-7">
+                                <span class="price-span text-left">Taksa za čišćenje (jednokratno).</span>
+                            </div>
+                            <div class="col-5  offset-lg-6 col-lg-3">
+                                <span class="price-span">15 &euro;</span>
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="col-12">
-                                <span class="price-span text-left">PDV je uracunat u cenu, kao i sve ostale takse i naknade!</span>
+                                <span class="price-span text-left">PDV je uracunat u cenu!</span>
                             </div>
                         </div>
 
