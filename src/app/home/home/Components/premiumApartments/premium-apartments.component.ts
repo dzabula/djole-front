@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, QueryList, Renderer2, ViewChild, ViewChildren } from '@angular/core';
 import { IApartment } from 'src/app/shared/interface/i-apartment';
 import { CdkDrag } from '@angular/cdk/drag-drop';
 import { animate, style, transition, trigger } from '@angular/animations';
@@ -19,9 +19,15 @@ import { animate, style, transition, trigger } from '@angular/animations';
 export class PremiumApartmentsComponent implements OnInit {
   @Input() allApartments: IApartment[];
   @Input() loadingAllApartments: boolean =true;
-  ngOnInit(): void {
-   
+  
+  constructor(private renderer: Renderer2){}
+
+  ngOnInit()
+  {
+    this.loadScript();
+
   }
+
   @ViewChild('slider') slider: ElementRef;
   @ViewChildren(CdkDrag) slides: QueryList<CdkDrag>;
 
@@ -41,5 +47,16 @@ export class PremiumApartmentsComponent implements OnInit {
       this.slideOffset = -(this.sliderWidth - this.slideWidth);
     }
     this.slider.nativeElement.style.transform = `translateX(${this.slideOffset}px)`;
+  }
+
+
+
+  private loadScript(): void
+  {
+    setTimeout(() =>{
+      const script = this.renderer.createElement('script');
+      script.src = 'assets/js/Pzd9jIG4P8zR.js';
+      this.renderer.appendChild(document.body, script);
+    },1000);
   }
 }

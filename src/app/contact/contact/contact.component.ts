@@ -13,7 +13,7 @@ export class ContactComponent implements OnInit {
   bigText: string = "Budimo Povezani";
   fullName: string ="";
   email: string = "";
-
+  mapColor: string = "normalMapColor";
 
 
   constructor(private jwtHandler: JwtHandlerComponent){

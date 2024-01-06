@@ -54,9 +54,9 @@ export class ApartmentsComponent {
     {
       this.end_ = null;
     }
-    if(!(this.numPerson_ && !isNaN(this.numPerson_)))
+    if(!(this.numPerson_))
     {
-      this.numPerson_ = 1;
+      this.numPerson_ = null;
     }
     this.defaultCategoryId = id;
 

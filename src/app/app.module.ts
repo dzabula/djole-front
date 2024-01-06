@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
 import { RouteReuseStrategy, RouterModule } from '@angular/router';
 import { CustomReuseStrategy } from './RouteReuseStrategy/RouteReuseStrategy';
 import { ActivateUserComponent } from './activateUser/activate-user/activate-user.component';
+import { BlegradeModule } from './belgrade/blegrade.module';
 
 
 
@@ -15,14 +16,14 @@ import { ActivateUserComponent } from './activateUser/activate-user/activate-use
 @NgModule({
   declarations: [
     AppComponent,
-    ActivateUserComponent,
-      
+    ActivateUserComponent
   ],
   imports: [ 
     CommonModule,
     AppRoutingModule,
     LayoutModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    BlegradeModule
 
   ],
   // providers: [{ provide: RouteReuseStrategy, useClass: CustomReuseStrategy }],

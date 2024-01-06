@@ -108,7 +108,7 @@ export class ApartmentDetailComponent implements OnInit {
 
   OpenReservationDialog(){
     const  dialogRef = this.dialog.open(ReservationComponent, {
-      width: this.isSmallScreen ? '95%' : '80%',
+      width: "90",
       data:{
         pricePerNight : this.details.price.pricePerNight,
         priceOnHoliday : this.details.price.priceOnHoliday,

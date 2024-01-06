@@ -8,8 +8,8 @@
 
 export const CONFIGURATION = {
     SERVER:"localhost:5000/",
-    APIURL:"http://localhost:5000/api/",
+    APIURL:"https://localhost:5005/api/",
     STATICDATAURL:"http://localhost:4200/assets/Api-Data/",
-    FILE:"http://localhost:5000/api/uploads/"
+    FILE:"https://localhost:5005/api/uploads/"
 
 }

@@ -24,6 +24,7 @@
     "@angular/router": "^16.2.1",
     "@asymmetrik/ngx-leaflet": "^16.0.1",
     "@kolkov/angular-editor": "^3.0.0-beta.0",
+    "@mdi/font": "^7.3.67",
     "@ng-bootstrap/ng-bootstrap": "^15.1.1",
     "angular-jwt": "^0.1.11",
     "jquery": "^3.7.0",

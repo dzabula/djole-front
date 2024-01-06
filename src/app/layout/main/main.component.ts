@@ -75,6 +75,10 @@ export class MainComponent implements OnInit{
           "link":"/aboutus"
       },
       {
+        "name":"O Beogradu",
+        "link":"/belgrade"
+      },
+      {
           "name":"Log In",
           "link":"/login"
       },

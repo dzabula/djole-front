@@ -3,8 +3,11 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .page-header-bg{
-    background-image: url("/assets/images/apartmani/coverAllApartmnet.jpg") !important;
+    background-image: url("/assets/images/belgrade/belgrade1.jpg") !important;
     background-size: cover;
+}
+.pointer{
+  cursor: pointer;
 }
 .z-999{
   z-index: 999;
@@ -21,16 +24,26 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .radius-50{
   border-radius: 50%;
 }
+.ft-9{
+  font-size: 9px;
+}
+.cdk-overlay-0{
+  max-width: 95vw;
+  width: 95%;
+}
 .color-strong{
   color:var(--najjaca-roza) !important;
 }
 .moji-gradient{
   background: rgb(255,255,255);
-  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgb(227 187 206) 100%);
+  background: linear-gradient(0deg, rgb(249, 249, 249) 0%, rgb(227 187 206) 100%);
 }
 .moji-gradient-obrnuti{
   background: rgb(255,255,255);
   background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgb(227 187 206) 100%);
+}
+.normalMapColor{
+  mix-blend-mode: normal;
 }
 /*SPINER*/
 .filter-apartment-subtitle{
@@ -79,7 +92,8 @@ margin: 20px auto;
 /*END PRELOADER*/
 /*LEAFLET*/
 .popup-img{
-  border-radius: 25px !important;
+  border-radius: 25px 0px !important;
+  margin-bottom: 5px;
 }
 .popup-title{
   text-align: center !important;
@@ -159,3 +173,17 @@ margin: 20px auto;
   margin-bottom: 30px; */
 }
 /*KRAJ MAPE*/
+
+/*O BEOGRADU*/
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span{
+  background-color: var(--jaka-roza) !important;
+} 
+.owl-theme .owl-dots .owl-dot.active span:hover, .owl-theme .owl-dots .owl-dot:hover span:hover{
+  background-color: var(--najjaca-roza) !important;
+} 
+.google-map-belgrade{
+  border: 0px;
+  height: 400px;
+  width: 100%;
+}
+/*KRAJ O BEOGRADU*/

@@ -16,6 +16,7 @@
             </div>
 
             <app-map [mapString]="mapString"></app-map>
+            
             <app-comments [idApartment]="id" (replyAdded)="onCommentAdded($event)" [appUser]="appUser" [comments]="comments"></app-comments>
             <ng-container *ngIf="isLogedIn; else elseBlock">
                 <app-rate [rates]="rates" [apartmentId]="id"></app-rate>

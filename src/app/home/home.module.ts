@@ -24,6 +24,7 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSelectModule } from '@angular/material/select';
 import { MatNativeDateModule } from '@angular/material/core';
+import { OurServicesComponent } from './home/Components/our-services/our-services.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     CategoiresComponent,
     PremiumApartmentsComponent,
     ContactComponent,
-    FloorPlanComponent
+    FloorPlanComponent,
+    OurServicesComponent
   ],
   providers :[BannerService,ApartmentsService],
   imports: [

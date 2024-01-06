@@ -34,17 +34,17 @@
       </section>
 
   </section> -->
-  <section id="" class="">
-    <div class="container" data-aos="fade-right">
+  <section id="" class="d-flex justify-content-center">
+    <div class="container row" data-aos="fade-right">
         <!-- 1 -->
-        <div class="row portfolio-items">
+        <div class="portfolio-items col-12 col-lg-9">
             <div class="item it2  col-12 web">
                 <div class="single-portfolio">
                     <div class="portfolio-img">
-                        <img src="{{thumb.path}}" class="w-100" alt="IMG-1726" />
+                        <img src="{{thumb.path}}" class="w-100 main-image " alt="IMG-1726" />
                         <div class="portfolio-view">
                             <div class="item-wrap">
-                                <span class="img-poppu" (click)="showImage()">
+                                <span class="img-poppu" (click)="showImage(null)">
                                     <span class="plus"></span>
                                 </span>
                             </div>
@@ -53,24 +53,81 @@
                 </div>
             </div>
         </div>
+        
+        <div class=" portfolio-items col-12 col-lg-3 other-images-container row">
+            <!-- <ng-container   *ngFor="let img of images; let i = index">
+                <div class="item it2  col-3 col-lg-12 web mt-3 mr-mobile-5" [ngClass]="{'mt-monitor-0': i === 1}" *ngIf="i != 0">
+                    
+                    <div class="single-portfolio">
+                        <div class="portfolio-img">
+                            <img src="{{img.path}}" class="w-100 radius-25 initial-other-img" alt="IMG-1726" />
+                            <div class="portfolio-view">
+                                <div class="item-wrap">
+                                    <span class="img-poppu" (click)="showImage(i)">
+                                        <span class="plus"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-container> -->
+            <ng-container *ngFor="let img of images.slice(1, 4); let i = index">
+                <div class="item it2 col-4 col-lg-12 web mt-3 my-item" [ngClass]="{'mt-monitor-0': i === 0}">
+                  <div class="single-portfolio">
+                    <div class="portfolio-img">
+                      <img src="{{img.path}}" class="w-100  initial-other-img" alt="IMG-1726" />
+                      <div class="portfolio-view">
+                        <div class="item-wrap">
+                          <span class="img-poppu" (click)="showImage(i+1)">
+                            <span class="plus"></span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </ng-container>
+        </div>
+
+        <div class=" portfolio-items col-12 other-images-container-2 row">
+              <!-- Prikazi ostale elemente -->
+              <ng-container *ngFor="let img of images.slice(4); let i = index">
+                <div class="item it2 col-4  web mt-3 ">
+                  <div class="single-portfolio">
+                    <div class="portfolio-img">
+                      <img src="{{img.path}}" class="w-100 initial-other-img-2" alt="IMG-1726" />
+                      <div class="portfolio-view">
+                        <div class="item-wrap">
+                          <span class="img-poppu" (click)="showImage(i+4)">
+                            <span class="plus"></span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </ng-container>
+        </div>
     </div>
     <div class="fullPreview" *ngIf="showFullPreview">
       <div class="cerrarModal" (click)="closeFullPreview()"></div>
       <div class="wrapper">
         <div class="blur" [style.background-image]="'url(' + selectedImage.path + ')'"></div>
         <p class="titulo"></p>
-        <img [src]="selectedImage.path" class="w-100" alt="temporary image, fullscreen of one image in galery" (click)="navigateImages('next')">
+        <img [src]="selectedImage.path" class="pointer tmp-image" alt="temporary image, fullscreen of one image in galery" (click)="navigateImages('next')">
         <p class="desc"></p>
       </div>
-      <div class="controles d-flex row">
-        <div class="control ret col-6 " (click)="navigateImages('prev')"><i class="fa-solid fa-circle-arrow-left"></i></div>
-        <div class="control av col-6 d-flex justify-content-end"  (click)="navigateImages('next')"><i class="fa-solid fa-circle-arrow-right"></i></div>
-      </div>
-      <i class="fa-regular fa-circle-xmark close-button" (click)="closeFullPreview()"></i>
-    </div>
-    <div class="overley-gallery " (click)="closeFullPreview()" *ngIf="showFullPreview">
 
+      <div class="controles d-flex arrow-container pointer">
+        <div class="control ret col-6 " (click)="navigateImages('prev')"><i class="fa-solid fa-chevron-left"></i></div>
+        <div class="control av col-6 d-flex justify-content-end"  (click)="navigateImages('next')"><i class="fa-solid fa-chevron-right"></i></div>
+      </div>
+      <!-- <i class="fa-regular fa-circle-xmark close-button" (click)="closeFullPreview()"></i> -->
     </div>
+    <div class="overley-gallery relative " (click)="closeFullPreview()" *ngIf="showFullPreview">
+    </div>
+    <div class="control ret col-12 cancle-container" (click)="closeFullPreview()" *ngIf="showFullPreview"><i class="fa-solid fa-xmark"></i></div>
  
 </section>
 </ng-container>

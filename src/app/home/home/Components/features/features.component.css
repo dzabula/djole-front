@@ -2,3 +2,6 @@
     color: black;
     font-size: 28;
 }
+.counter-one__single{
+    border-radius:25% 5% 5% 5% !important;
+}

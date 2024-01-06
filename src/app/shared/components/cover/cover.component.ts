@@ -6,7 +6,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./cover.component.css']
 })
 export class CoverComponent {
-  @Input() firstWord: string;
-  @Input() smallText: string;
-  @Input() bigText: string;
+  @Input() text: string = "PARADISE";
+  @Input() subtext: string = "";
 }

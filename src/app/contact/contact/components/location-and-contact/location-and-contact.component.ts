@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CONTACT } from 'src/app/constants/contact';
 
 @Component({
@@ -8,5 +8,4 @@ import { CONTACT } from 'src/app/constants/contact';
 })
 export class LocationAndContactComponent {
   CONTACT_: any = CONTACT;
-
 }

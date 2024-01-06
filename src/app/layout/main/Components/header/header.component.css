@@ -1,3 +1,6 @@
+.main-header__top{
+    background-color: var(--roze-krem1) !important;
+}
 .main-header{
     position: fixed !important;
     z-index: 997 !important;

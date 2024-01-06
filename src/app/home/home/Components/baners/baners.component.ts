@@ -105,7 +105,7 @@ export class BanersComponent implements OnInit {
   }
 
   initMap() {
-    this.map = new L.Map('map',{markerZoomAnimation: true,fadeAnimation:true, zoomControl: false});
+    this.map = new L.Map('map',{markerZoomAnimation: true,fadeAnimation:true, zoomControl: true, scrollWheelZoom: false});
 
     const osmUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
     const osmAttrib = '';
@@ -127,7 +127,7 @@ export class BanersComponent implements OnInit {
     this.allApartments.forEach((a, index) => {
         const maxPerson = a.maxPerson;
         const marker = L.marker([this.coordinates[index][0],this.coordinates[index][1]],{icon: this.icon}).addTo(this.map);
-        marker.bindPopup("<a ng-reflect-router-link='/apartments/"+a.id+"' href='/apartments/"+a.id+"' class='pointer popup-title w-100 d-block'>"+a.title+"</a><div class='py-1'><a ng-reflect-router-link='/apartments/"+a.id+"' href='/apartments/"+a.id+"' class='pointer'> <img class='w-100 popup-img' src='"+a.file.path+"' alt=''></a></div>Max. <i class='user-icon fa-solid fa-user-group'></i> &nbsp;" + maxPerson).openPopup();
+        marker.bindPopup("<a ng-reflect-router-link='/apartments/"+a.id+"' href='/apartments/"+a.id+"' class='pointer popup-title w-100 d-block'>"+a.title+"</a><div class=''><a ng-reflect-router-link='/apartments/"+a.id+"' href='/apartments/"+a.id+"' class='pointer'> <img class='w-100 popup-img' src='"+a.file.path+"' alt=''></a></div>Max. <i class='user-icon fa-solid fa-user-group'></i> &nbsp;" + maxPerson +" <span class='ft-9'>Kneza Visesalava 87a</span> ").openPopup();
     });   
   }
 
@@ -146,7 +146,9 @@ export class BanersComponent implements OnInit {
     return `${year}-${month}-${day}`;
   }
 
-
+  scrollDown(){
+    
+  }
   
 }
 

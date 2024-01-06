@@ -4,14 +4,16 @@
     <form [formGroup]="reservationForm">
         <div class="w-75 desc-reservation">
         <p class=" px-2 ">* Apartman moze biti rezervisan nekim datumima. Datumi koji su vec rezervisani od strane drugih korisnika su onemoguceni.</p>
-        <p class=" px-2 ">* Apartman poseduje drugu cenu za vansezonske termine (od 10.10 do 01.05). Cena van sezone iznosi: {{secondPrice | MoneyFormat}} EUR. </p>
-        <ng-container *ngIf="currentApartment.specPrices.length > 0">
+        <p class=" px-2 ">* Cena apartmana moze da varira u toku godine u zavisnosti od sezone. Cena moze biti veca vikendima i praznicima.</p>
+        <p class=" px-2 ">* Smestaj je besplatan za decu do 3 godine.</p>
+        <!-- <p class=" px-2 ">* Apartman poseduje drugu cenu za vansezonske termine (od 10.10 do 01.05). Cena van sezone iznosi: {{secondPrice | MoneyFormat}} EUR. </p> -->
+        <!-- <ng-container *ngIf="currentApartment.specPrices.length > 0">
             <p class=" px-2 ">* Odredjenim datumima cena apartmana moze biti povecana. A to su:</p>
             <ng-container *ngFor="let spec of currentApartment.specPrices; let i = index">
                 <p class="pl-10 ">{{ spec.date | date: 'dd.MM.' }} - <span> {{spec.price}} EUR.</span></p>
             </ng-container>
 
-        </ng-container>
+        </ng-container> -->
         </div>
     
         <div class="d-flex justify-content-center">
@@ -94,12 +96,10 @@
                 <p *ngIf="isLoading">Ucitavanje...</p>
                 <br>
                 <ul class="reservation-info pl-0-mobile">
-                    <li>U apartman je moguće uči najranije u podne u 12:00</li>
-                    <li>Apartman se napušta zadnjeg dana u 10:00h pre podneva.</li>
-                    <li>Rezervacija će glasiti na vaše ime i prezime.</li>
-                    <li>Naš operater će vas kontaktirati na vaš broj telefona radi potvrde rezervacije.</li>
-                    <li>Naplata se vrši prilikom dolaska u apartman.</li>
-                    <li>Rezervaciju je moguće otkazati u bilo kom trenutku.</li>
+                    <li>Check In od 14:00 do 22:00</li>
+                    <li>Check Out do 11:00</li>
+                    <li>Bicete kontaktirani putem mejla nakon kreirane rezervacije</li>
+                    <li>Potrebno je uplatiti avans nekoliko dana unapred, o tome ce vas obavestiti nas operater.</li>
                     <li>Sve Vaše rezervacije možete pogledati u sekciji "Rezervacije" u navigacionom meniu.</li>
                 
                 </ul>

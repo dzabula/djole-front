@@ -47,7 +47,7 @@
   letter-spacing: -3px;
   transition: 700ms ease;
   font-variation-settings: "wght" 311;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0px ;
   color:var(--jaka-roza);
   outline: none;
   text-align: center;
@@ -94,7 +94,11 @@
         font-weight: 700;
         text-transform: uppercase;
         perspective: 4.0em;
+        box-sizing: unset;
     
+  }
+  .letter{
+    box-sizing: unset;
   }
   
   .glow, 

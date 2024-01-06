@@ -18,14 +18,24 @@ export class GalleryComponent implements OnInit{
     }
 
     ngOnInit(): void {
-      this.images.push(this.thumb);
+      this.images.unshift(this.thumb);
+      
+      console.log("Images",this.images)
     }
   
   
 
   showImage(index: number) {
-    this.selectedImage = this.images[0];
-    this.showFullPreview = true;
+    if(index == null)
+    {
+      this.selectedImage = this.images[0];
+      this.showFullPreview = true;
+    }
+    else
+    {
+      this.selectedImage = this.images[index];
+      this.showFullPreview = true;
+    }
   }
 
   closeFullPreview() {

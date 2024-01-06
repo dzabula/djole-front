@@ -6,7 +6,10 @@
     overflow: hidden;
     position: relative;
   }
-
+.apartment-one__img img{
+  height: 250px;
+  object-fit: cover;
+  }
   .hover-roza:hover{
     color:var(--jaka-roza);
   }

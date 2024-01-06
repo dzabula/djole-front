@@ -38,8 +38,6 @@ export class ApartmentsService extends ApiService<IApartment> {
     if(numPerson != null) paramsString += "&numPerson=" + numPerson;
     if(start != null) paramsString += "&start=" + start;
     if(end != null) paramsString += "&end" + end;
-    console.log("Parametri pr elsanja:", paramsString);
-    console.log("Num person je:", numPerson);
     return  this.client.get<IPagination>(this.url + paramsString )
         
   }

@@ -19,8 +19,17 @@
                     <div class="form-row col-12 col-lg-4">
                         <mat-form-field class="w-100">
                         <mat-label>Broji osoba:</mat-label>
-                        <mat-select placeholder="Broji osoba"  [(ngModel)]="selectedNumberOfPerson" formControlName="numPerson">
-                            <mat-option *ngFor="let num of numbersOfPersons" [value]="num">{{ num }}</mat-option>
+                        <mat-select placeholder="Broji osoba"  formControlName="numPerson">
+                            
+                            <ng-container *ngFor="let num of numbersOfPersons">
+    
+                                <ng-container *ngIf="num == numPerson; else elseBlock">
+                                    <mat-option [value]="num" selected>{{ num }}</mat-option>
+                                </ng-container>
+                                <ng-template #elseBlock>
+                                    <mat-option [value]="num">{{ num }}</mat-option>
+                                </ng-template>
+                            </ng-container>                                
                         </mat-select>
                         </mat-form-field>
                     </div>

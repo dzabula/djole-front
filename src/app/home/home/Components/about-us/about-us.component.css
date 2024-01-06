@@ -42,8 +42,18 @@
     width: 80px !important;
 }
 @media (max-width: 767px) {
+
     .about-one__points-list{
         align-items: start;
     }
+    .mb-xl-0{
+        margin-bottom: 0px !important;
+        margin-top: 10px !important;
+    }
 
+}
+@media (max-width: 967px) {
+    .about-one{
+        padding: 70px 0 120px;
+    }
 }

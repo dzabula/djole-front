@@ -5121,7 +5121,7 @@ ul {
   display: block;
   float: left;
   width: 50%;
-  background-color: var(--alipes-black);
+  background-color: var(--roze-krem2);
   padding: 120px 0 120px;
   z-index: 1;
 }
@@ -5132,7 +5132,7 @@ ul {
   left: 0;
   height: 400px;
   width: 20px;
-  background-color: var(--alipes-base);
+  background-color: #f1f1f1;
   content: "";
   z-index: 1;
 }
@@ -5206,10 +5206,11 @@ ul {
   justify-content: center;
   width: 16px;
   height: 16px;
-  background-color: var(--alipes-base);
+  background-color: var(--jaka-roza);
   border-radius: 50%;
   font-size: 9px;
-  color: var(--alipes-black);
+  color: var(--roze-krem1);
+
 }
 
 .values-one__points li .text {
@@ -9196,7 +9197,7 @@ ul {
 .testimonial-two {
   position: relative;
   display: block;
-  background-color: var(--alipes-primary);
+  background-color: var(--roze-krem1) !important  ;
   padding: 120px 0 120px;
   z-index: 1;
 }

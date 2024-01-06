@@ -1,21 +1,41 @@
-<section class="location">
-    <div class="location-shape-1 float-bob-x">
-        <img src="assets/images/location-shape-1.png" alt>
-    </div>
-    <div class="container">
-        <div class="row">
-            <!--Location single Start-->
-            <div class="col-12">
-                <div class="location__single">
-                    <h4 class="location__title">U samom centru grada</h4>
-                    <p class="location__text">{{CONTACT_.ADRESS}}</p>
-                    <div class="location__phone-email">
-                        <a href="mailto:needhelp@company.com">{{CONTACT_.EMAIL}}</a> <br>
-                        <a href="tel:{{CONTACT_.PHONE}}">{{CONTACT_.PHONE}}</a>
+<section class="">
+    <section class="location">
+        <div class="location-shape-1 float-bob-x">
+            <img src="assets/images/location-shape-1.png" alt>
+        </div>
+        <div class="container">
+            <div class="row">
+                <!--Location single Start-->
+                <div class="col-12">
+                    <div class="location__single">
+                        <div class="row">
+                            <div class="col-12 col-lg-4 d-flex justify-content-center align-center m-12">
+                                <div class="contact-block location__phone-email">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <a  class="location__text">{{CONTACT_.ADRESS}}, Beograd</a>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-4 d-flex justify-content-center align-center m-12">
+                                <div class="contact-block location__phone-email">
+                                    <i class="fa-solid fa-phone"></i>
+                                    <div class="d-flex justify-content-around">
+                                        <a href="tel:{{CONTACT_.PHONE}}" class="mr-10">{{CONTACT_.PHONE}}</a>
+                                        <a href="tel:{{CONTACT_.PHONE2}}" class="">{{CONTACT_.PHONE2}}</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-4 d-flex justify-content-center align-center m-12">
+                                <div class="contact-block location__phone-email">
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <a href="mailto:needhelp@company.com" class="m-12">{{CONTACT_.EMAIL}}</a>
+                                </div>
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
+        
             </div>
-    
         </div>
-    </div>
+    </section>
 </section>

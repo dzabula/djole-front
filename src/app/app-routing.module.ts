@@ -40,6 +40,10 @@ const routes: Routes = [
         loadChildren: () => import("./about-us/about-us.module").then(x => x.AboutUsModule),
       },
       {
+        path: "belgrade",
+        loadChildren: () => import("./belgrade/blegrade.module").then(x => x.BlegradeModule),
+      },
+      {
         path: "login",
         canActivate:[RefreshTokenGuard],
         loadChildren: () => import("./login/login.module").then(x => x.LoginModule),

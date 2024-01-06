@@ -75,8 +75,10 @@ export class FilterComponent {
     if(this.end == null || this.end == undefined) this.end = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate() + 2,13,30,1); 
 
     this.fillForm();
+
     if(!(this.defaultCategoryId && !isNaN(this.defaultCategoryId))) this.defaultCategoryId= 0;
-    if(isNaN(this.numPerson)) this.numPerson = 1;
+    if(!this.numPerson) this.numPerson = 1;
+    
     this.filterForm = this.formBuilder.group({
       title: [''],
       city: [''],
@@ -169,20 +171,20 @@ export class FilterComponent {
     if(!params.start) params.start = null;
     if(!params.end) params.end = null;
 
-    if(this.selectedNumberOfPerson == null || this.selectedNumberOfPerson ==0)
-    {
-       params.numPerson = null;
-    }
-    else{
-        params.numPerson = this.selectedNumberOfPerson;
-    }
+    //UKOLIKO NE RADI FILTRIRANJE PO BROJU OSOBA POGLEDATI OVAJ KOD
+    // if(this.selectedNumberOfPerson == null || this.selectedNumberOfPerson ==0)
+    // {
+    //    params.numPerson = null;
+    // }
+    // else{
+    //     params.numPerson = this.filterForm.value.numPerson;
+    // }
 
     if(!params.category) params.category = [];
     if(!params.title) params.title = "";
     if(!params.minPrice) params.minPrice = 0;
     if(!params.maxPrice) params.maxPrice = 0;
-    console.log("selected number person", this.selectedNumberOfPerson);
-    console.log("person in param", params.numPerson);
+
     this.filterEmiter.emit(params);
   }
 

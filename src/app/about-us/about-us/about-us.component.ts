@@ -6,8 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./about-us.component.css']
 })
 export class AboutUsComponent {
-    firstWord: string = "O";
-    smallText: string = "Nama";
-    bigText: string = "Lux Place";
+    text: string = "PARADISE";
+    subtext: string = "GDE GOD DA IDES IDI PUNOG SRCA";
     
 }

@@ -33,6 +33,30 @@ iframe{
     font-size: 0.9em;
     color:var(--alipes-black);
 }
+.text{
+    font-size: 15px;
+    font-weight: normal;
+}
+.iconn{
+    font-size: 22px;
+    color: var(--jaka-roza) !important;
+}
+.other-spec-text{
+    text-align: left;
+  color: var(--jaka-roza) !important;
+  font-weight: bold;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 1.6em;
+  width: 100%;
+  margin-top: 15px;
+}
+.icon-container{
+    display: flex;
+    justify-content: center;
+}
+.li{
+    margin-bottom: 20px !important;
+}
 @media (max-width: 992px) {
     iframe{
         height: 350px;

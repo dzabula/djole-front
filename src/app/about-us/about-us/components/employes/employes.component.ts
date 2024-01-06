@@ -8,22 +8,14 @@ import { IEmploye } from '../../interface/i-employe';
   styleUrls: ['./employes.component.css']
 })
 export class EmployesComponent implements OnInit {
-  employes: IEmploye[];
-  constructor(private employeService: EmployesService){
+
+  constructor(){
 
   }
 
 
   ngOnInit(): void {
-    this.employeService.get().subscribe({
-      next: response =>{
-          this.employes = response;
-      },
-      error: xhr=>{
-          alert("Doslo je od greske prilikom ucitavanja zaposlenih!");
-          console.log(xhr);
-      }
-    })
+
   }
 
 

@@ -1,3 +1,17 @@
 .footer-widget__title{
     color: var(--najjaca-roza) !important;
 }
+@media (max-width: 431px){
+    .footer-widget__title {
+        margin-bottom: 0px !important;
+    }
+    .ml-35{
+        margin-bottom: 5px !important;
+    }
+    .footer-widget__title-box, .footer-widget__title-box{
+        margin-bottom: 0px !important;
+    }
+  .mat-typography h3{
+    margin-bottom: 6px !important;
+  }
+}
