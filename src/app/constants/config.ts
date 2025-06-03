@@ -7,9 +7,9 @@
 // }
 
 export const CONFIGURATION = {
-    SERVER:"localhost:5000/",
-    APIURL:"https://localhost:5005/api/",
-    STATICDATAURL:"http://localhost:4200/assets/Api-Data/",
-    FILE:"https://localhost:5005/api/uploads/"
+    SERVER:"https://daskeapissl.click/",
+    APIURL:"https://daskeapissl.click/api/",
+    STATICDATAURL:"https://paradiseapartments.rs/assets/Api-Data/",
+    FILE:"https://daskeapissl.click/api/uploads/"
 
 }

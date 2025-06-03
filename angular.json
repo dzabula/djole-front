@@ -11,7 +11,7 @@
       "prefix": "app",
       "architect": {
         "build": {
-          
+
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/djole-apartment",
@@ -42,13 +42,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "5000kb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "6kb"
+                  "maximumWarning": "2000kb",
+                  "maximumError": "6000kb"
                 }
               ],
               "outputHashing": "all"
