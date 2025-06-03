@@ -9,12 +9,12 @@
     </mat-form-field>
   </div>
 
- 
-  <div class=" description-container"> 
+
+  <div class=" description-container">
       <label for="description">Opis:</label><br/>
       <angular-editor matInput class="h-200" formControlName="description" [config]="editorConfig" required></angular-editor>
   </div>
- 
+
 
   <div class="form-row">
     <mat-form-field>
@@ -55,8 +55,8 @@
         </mat-form-field>
 
         <mat-form-field class="col-12 ">
-          <mat-label>Specijalna cena u RSD</mat-label> 
-          <input matInput type="number" step="200" [value]="spec.price" placeholder="" [id]="'price' + spec.id" > 
+          <mat-label>Specijalna cena u RSD</mat-label>
+          <input matInput type="number" step="200" [value]="spec.price" placeholder="" [id]="'price' + spec.id" >
         </mat-form-field>
 
         <div class="card-specprice-fields col-12 d-flex justify-content-end">
@@ -108,14 +108,14 @@
   </div>
 
   <div class="form-row mb-5">
-    <div class="w-75 mx-auto">  
+    <div class="w-75 mx-auto">
         <label>Trenutna
           naslovna
-          slika: (Ukoliko otpremite novu 
+          slika: (Ukoliko otpremite novu
          sliku ova slika će biti izbrisana.
           Ukoliko ne otpremite ni jednu sliku ova(stara)
           slika će ostati sačuvana)!</label>
-   
+
         <img [src]="currentApartment.file.path" alt="Slika {{ currentApartment.file.id }}" class="left-image mb-3">
 
         <mat-form-field class="w-100">
@@ -124,12 +124,12 @@
         </mat-form-field>
     </div>
   </div>
-  
+
   <div class="form-row">
     <div class="w-75 mx-auto">
-        
+
         <label>Trenutne slike: (Ukoliko ne štiklirate 'Sačuvaj sliku' slika će biti izbrisana nakon sto sačuvate promene. Morate ili otpremiti makar jednu sliku ili ostaviti štikliranu bar jednu sliku.)</label>
-        
+
         <div *ngFor="let img of editableImages">
             <div class="image-container">
                 <img [src]="img.path" alt="Slika {{img.id }}" class="left-image mb-3">
@@ -140,7 +140,7 @@
                 </div>
               </div>
         </div>
-        
+
         <mat-form-field class="w-100">
         <input matInput [placeholder]="'Slike'" [readonly]="true">
         <input matFileInput type="file" class="px-2"   multiple (change)="handleImagesInput($event)" accept="image/*">
@@ -159,8 +159,8 @@
 
   <div class="form-row">
     <mat-form-field>
-      <mat-label>Broji soba</mat-label>
-      <mat-select placeholder="Broji soba"  [(ngModel)]="selectedCityId" formControlName="rooms"  required>
+      <mat-label>Broj soba</mat-label>
+      <mat-select placeholder="Broj soba"  [(ngModel)]="selectedCityId" formControlName="rooms"  required>
         <mat-option *ngFor="let room of rooms" [value]="room.id">{{ room.value }}</mat-option>
       </mat-select>
     </mat-form-field>
@@ -179,11 +179,11 @@
     </div>
    </div>
   <div class="form-buttons buttons">
-    
+
         <button mat-raised-button color="light" class="margin-right-50 bg-success color-white " type="submit" [disabled]="editApartmentForm.invalid">Sačuvaj</button>
-        
-        <button mat-raised-button color="warn" type="button" (click)="close()">Odustani</button>  
-    
+
+        <button mat-raised-button color="warn" type="button" (click)="close()">Odustani</button>
+
   </div>
 </form>
 </section>

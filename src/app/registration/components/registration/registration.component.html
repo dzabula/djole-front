@@ -1,5 +1,5 @@
 <div class="container mt-5 w-75 mx-auto  ">
-    
+
     <!-- <mat-card class="mt-5 my-card"> -->
       <!-- <mat-card-title class="py-4">Registracija</mat-card-title> -->
       <!-- <mat-card-content> -->
@@ -36,7 +36,7 @@
       <div class="form-group mt-3">
         <mat-form-field>
           <input matInput placeholder="Lozinka" type="password" formControlName="password" required>
-          <mat-error *ngIf="registrationForm.contains('password') &&  registrationForm.controls['password']?.hasError('pattern')">Lozinka mora sadržati min. 8 karaktera! Min. jedno veliko slovo i min. jedan broji!</mat-error>
+          <mat-error *ngIf="registrationForm.contains('password') &&  registrationForm.controls['password']?.hasError('pattern')">Lozinka mora sadržati min. 8 karaktera! Min. jedno veliko slovo i min. jedan broj!</mat-error>
           <mat-error *ngIf="registrationForm.contains('password') &&  registrationForm.controls['password']?.hasError('required')">Email je obavezno polje</mat-error>
         </mat-form-field>
       </div>

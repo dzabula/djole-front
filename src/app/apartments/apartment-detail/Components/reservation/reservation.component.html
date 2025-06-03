@@ -1,6 +1,6 @@
 <section id="edit" class="py-2">
     <p class="text-center title">Unos datuma dolazak i odlazak</p>
-    
+
     <form [formGroup]="reservationForm">
         <div class="w-75 desc-reservation">
         <p class=" px-2 ">* Apartman moze biti rezervisan nekim datumima. Datumi koji su vec rezervisani od strane drugih korisnika su onemoguceni.</p>
@@ -15,18 +15,18 @@
 
         </ng-container> -->
         </div>
-    
+
         <div class="d-flex justify-content-center">
             <div class="w-75">
                 <div class="form-row w-100">
                     <mat-form-field class="w-100">
-                      <mat-label>Broji osoba:</mat-label>
-                      <mat-select placeholder="Broji osoba" formControlName="numPerson" [value]="defaultSelectedNumPerson" [(ngModel)]="selectedNumPerson" (selectionChange)="calculatePrice()" >
+                      <mat-label>Broj osoba:</mat-label>
+                      <mat-select placeholder="Broj osoba" formControlName="numPerson" [value]="defaultSelectedNumPerson" [(ngModel)]="selectedNumPerson" (selectionChange)="calculatePrice()" >
                         <mat-option *ngFor="let num of numbersOfPersons" [value]="num">{{ num }}</mat-option>
                       </mat-select>
                     </mat-form-field>
                 </div>
-                
+
                 <mat-form-field class="w-100">
                     <mat-label>Check In:</mat-label>
                     <input  matInput [matDatepicker]="dateStartPicker" [(ngModel)]="dateStart" [min]="minDate" formControlName="dateStart"
@@ -80,7 +80,7 @@
                             Telefon je obavezan podatak!
                          </mat-error>
                          <mat-error *ngIf="reservationForm.get('phone')?.hasError('pattern')">
-                            Telefon mora biti u formatu npr. +38112345678, 0611357233 
+                            Telefon mora biti u formatu npr. +38112345678, 0611357233
                          </mat-error>
                     </mat-form-field>
                     <br>
@@ -101,9 +101,9 @@
                     <li>Bicete kontaktirani putem mejla nakon kreirane rezervacije</li>
                     <li>Potrebno je uplatiti avans nekoliko dana unapred, o tome ce vas obavestiti nas operater.</li>
                     <li>Sve Vaše rezervacije možete pogledati u sekciji "Rezervacije" u navigacionom meniu.</li>
-                
+
                 </ul>
             </div>
-        </div>    
+        </div>
     </form>
 </section>

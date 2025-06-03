@@ -20,13 +20,13 @@
 
                 <div class="form-row w-100">
                     <mat-form-field class="w-100">
-                      <mat-label>Broji osoba:</mat-label>
-                      <mat-select placeholder="Broji osoba" formControlName="numPerson"  >
+                      <mat-label>Broj osoba:</mat-label>
+                      <mat-select placeholder="Broj osoba" formControlName="numPerson"  >
                         <mat-option *ngFor="let num of numbersOfPersons" [value]="num">{{ num }}</mat-option>
                       </mat-select>
                     </mat-form-field>
                 </div>
-                
+
                 <div class="row">
 
                     <div class="col-lg-12 col-6 form-row ">
@@ -48,7 +48,7 @@
                             <mat-datepicker #dateEndPicker></mat-datepicker>
                         </mat-form-field>
                     </div>
-                    
+
                 </div>
 
                 <div class="form-buttons buttons w-25 d-flex justify-content-center">
@@ -83,7 +83,7 @@
 
             <div class="swiper-slide" *ngFor="let banner of banners;">
                 <div class="image-layer" style="background-image: url(/assets/images/{{banner.image}});"></div>
-    
+
                 <div class="main-slider__overly"></div>
                 <div class="container pickuptext">
                     <div class="row">

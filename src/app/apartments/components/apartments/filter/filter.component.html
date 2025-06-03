@@ -18,18 +18,18 @@
                 <div class="row">
                     <div class="form-row col-12 col-lg-4">
                         <mat-form-field class="w-100">
-                        <mat-label>Broji osoba:</mat-label>
-                        <mat-select placeholder="Broji osoba"  formControlName="numPerson">
-                            
+                        <mat-label>Broj osoba:</mat-label>
+                        <mat-select placeholder="Broj osoba"  formControlName="numPerson">
+
                             <ng-container *ngFor="let num of numbersOfPersons">
-    
+
                                 <ng-container *ngIf="num == numPerson; else elseBlock">
                                     <mat-option [value]="num" selected>{{ num }}</mat-option>
                                 </ng-container>
                                 <ng-template #elseBlock>
                                     <mat-option [value]="num">{{ num }}</mat-option>
                                 </ng-template>
-                            </ng-container>                                
+                            </ng-container>
                         </mat-select>
                         </mat-form-field>
                     </div>
@@ -54,7 +54,7 @@
                         </mat-form-field>
                     </div>
                 </div>
-                <div class="row">        
+                <div class="row">
                     <div class="col-6">
                         <mat-form-field appearance="fill" class="d-block">
                         <mat-label>Opština</mat-label>
@@ -89,7 +89,7 @@
                         </mat-form-field>
                     </div>
                 </div>
-                <div class="row d-flex "> 
+                <div class="row d-flex ">
                     <div class="col-6 col-md-4 col-xl-3 col-lg-2">
                         <mat-radio-group  class="row">
                             <mat-checkbox formControlName="checkLift" value="4">Lift</mat-checkbox>
@@ -127,15 +127,15 @@
                     </div>
 
                 </div>
-                
+
                 <div class="col-12 col-lg-2 d-flex justify-content-end align-items-center">
                     <button mat-raised-button color="" class="button-bg-color-1 w-100"  type="submit">Filtriraj</button>
                 </div>
-                
+
             </div>
         </div>
     </form>
-</div>    
+</div>
 
 <div class="d-flex justify-content-center  w-100">
     <ng-container *ngIf="!HasApartment && !loading">
